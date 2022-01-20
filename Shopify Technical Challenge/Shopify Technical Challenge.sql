@@ -1,5 +1,5 @@
 # 1. How many orders were shipped by Speedy Express in total?
-SELECT Count(OrderID)
+SELECT Count(OrderID) as Speedy_Express_Shipments
 FROM Orders
 JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
 WHERE ShipperName = 'Speedy Express';
@@ -7,7 +7,7 @@ WHERE ShipperName = 'Speedy Express';
 
 
 # 2. What is the last name of the employee with the most orders?
-SELECT Count(OrderID) as Order_Count, LastName
+SELECT Count(OrderID) as Order_Count, LastName as Employee_LastName
 FROM Orders
 JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
 GROUP BY LastName
